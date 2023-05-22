@@ -23,12 +23,11 @@ void change(int *first, int *secound)
  */
 void insertion_sort_list(listint_t **list)
 {
+    listint_t *temp;
+    listint_t *current = (*list)->next;
 
     if (list == NULL || *list == NULL)
         return;
-
-    listint_t *temp;
-    listint_t *current = (*list)->next;
 
     if (current == NULL)
         return;
