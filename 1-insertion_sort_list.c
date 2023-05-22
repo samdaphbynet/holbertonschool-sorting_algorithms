@@ -29,9 +29,6 @@ void insertion_sort_list(listint_t **list)
     if (list == NULL || *list == NULL)
         return;
 
-    if (current == NULL)
-        return;
-
     while (current != NULL)
     {
         temp = current->prev;
