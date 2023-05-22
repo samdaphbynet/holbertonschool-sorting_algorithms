@@ -9,10 +9,10 @@
 
 void change(int *first, int *secound)
 {
-    int temp;
-    temp = *first;
-    *first = *secound;
-    *secound = temp;
+	int temp;
+	temp = *first;
+	*first = *secound;
+	*secound = temp;
 }
 
 /**
@@ -23,35 +23,36 @@ void change(int *first, int *secound)
  */
 void insertion_sort_list(listint_t **list)
 {
-    listint_t *temp;
-    listint_t *current = (*list)->next;
 
-    if (list == NULL || *list == NULL)
-        return;
+	if (list == NULL || *list == NULL)
+		return;
 
-    while (current != NULL)
-    {
-        temp = current->prev;
+	listint_t *temp;
+	listint_t *current = (*list)->next;
 
-        while (temp != NULL && temp->n > current->n)
+	while (current != NULL)
+	{
+		temp = current->prev;
 
-        {
-            if (temp->prev != NULL)
-                temp->prev->next = current;
-            else
-                *list = current;
+		while (temp != NULL && temp->n > current->n)
 
-            if (current->next != NULL)
-                current->next->prev = temp;
+		{
+			if (temp->prev != NULL)
+				temp->prev->next = current;
+			else
+				*list = current;
 
-            temp->next = current->next;
-            current->prev = temp->prev;
-            current->next = temp;
-            temp->prev = current;
+			if (current->next != NULL)
+				current->next->prev = temp;
 
-            temp = current->prev;
-            print_list(*list);
-        }
-        current = current->next;
-    }
+			temp->next = current->next;
+			current->prev = temp->prev;
+			current->next = temp;
+			temp->prev = current;
+
+			temp = current->prev;
+			print_list(*list);
+		}
+		current = current->next;
+	}
 }
