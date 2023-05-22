@@ -2,33 +2,18 @@
 #include "sort.h"
 
 /**
- * change - function that replace first value of secound value
- * @first: first value
- * @secound: secound value
- */
-
-void change(int *first, int *secound)
-{
-    int temp;
-    temp = *first;
-    *first = *secound;
-    *secound = temp;
-}
-
-/**
- * insertion_sort_list - Sorts a doubly linked list
- *                       using the Insertion sort algorithm
- *
- * @list: Pointer to the head of the list
+ * insertion_sort_list - Sorts a doubly linked list of integers
+ *                       in ascending order using Insertion sort algorithm
+ * @list: Pointer to the head of the doubly linked list
  */
 void insertion_sort_list(listint_t **list)
 {
     listint_t *temp;
-    listint_t *current = (*list)->next;
 
     if (list == NULL || *list == NULL)
         return;
 
+    listint_t *current = (*list)->next;
     while (current != NULL)
     {
         temp = current->prev;
