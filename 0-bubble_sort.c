@@ -25,10 +25,10 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t count, comp;
 
-    if (array == NULL)
-    {
-        return;
-    }
+	if (array == NULL)
+	{
+		return;
+	}
 
 	for (count = 0; count < size - 1; count++)
 	{
