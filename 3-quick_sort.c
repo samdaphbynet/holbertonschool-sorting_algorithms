@@ -26,7 +26,7 @@ void change(int *first, int *secound)
  */
 int partition(int *array, int low, int high, size_t size)
 {
-	int pivot, j;
+	int j;
 	int i = low - 1;
 
 	for (j = low; j < high; j++)
@@ -36,14 +36,14 @@ int partition(int *array, int low, int high, size_t size)
 			i++;
 			if (i != j)
 			{
-				swap(&array[i], &array[j]);
+				change(&array[i], &array[j]);
 				print_array(array, size);
 			}
 		}
 	}
 	if (array[high] < array[i + 1])
 	{
-		swap(&array[i + 1], &array[high]);
+		change(&array[i + 1], &array[high]);
 		print_array(array, size);
 	}
 	return (i + 1);
