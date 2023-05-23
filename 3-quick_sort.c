@@ -21,7 +21,7 @@ void change(int *first, int *secound)
  * @array: array to partition
  * @low: lowest index of partition to sort
  * @high: highest index of partition to sort
- *
+ * @size: the size of array
  * Return: index of pivot element
  */
 int partition(int *array, int low, int high, size_t size)
@@ -54,6 +54,7 @@ int partition(int *array, int low, int high, size_t size)
  * @array: array to sort
  * @low: lowest index of partition to sort
  * @high: highest index of partition to sort
+ * @size: the size of array
  */
 void quicksort(int *array, int low, int high, size_t size)
 {
@@ -62,7 +63,6 @@ void quicksort(int *array, int low, int high, size_t size)
 	if (low < high)
 	{
 		p = partition(array, low, high, size);
-		print_array(array, high + 1);
 		quicksort(array, low, p - 1, size);
 		quicksort(array, p + 1, high, size);
 	}
